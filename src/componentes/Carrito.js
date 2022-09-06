@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 const Carrito = ({carrito}) => {
     
@@ -41,4 +42,10 @@ const NombreProducto = styled.p`
     color: #000;
 `;
  
-export default Carrito;
+const mapStateToProps = (estado) => {
+    return {
+        carrito: estado.carrito
+    }
+}
+
+export default connect(mapStateToProps)(Carrito);
